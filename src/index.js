@@ -7,3 +7,4 @@ heading.render();
 const helloWorldButton = new HelloWorldButton();
 helloWorldButton.render();
 
+let ten = 10;
