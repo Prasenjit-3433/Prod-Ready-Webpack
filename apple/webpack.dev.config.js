@@ -1,6 +1,7 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { ModuleFederationPlugin } = require('webpack').container;
 
 module.exports = {
     entry: './src/apple-page.js',
@@ -62,6 +63,12 @@ module.exports = {
             title: "Apple!",
             template: 'src/page-template.hbs',
             description: 'Apple Page'
+        }),
+        new ModuleFederationPlugin({
+            name: 'AppleApp',
+            remotes: {
+                HelloWorldApp: 'HelloWorldApp@http://localhost:9001/remoteEntry.js'
+            }
         })
     ]
 };

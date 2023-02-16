@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { ModuleFederationPlugin } = require('webpack').container;
 
 module.exports = {
     entry: './src/apple-page.js',
@@ -58,6 +59,12 @@ module.exports = {
             template: 'src/page-template.hbs',
             description: 'Apple Page',
             minify: false
-        })
+        }),
+        new ModuleFederationPlugin({
+            name: 'AppleApp',
+            remotes: {
+                HelloWorldApp: 'HelloWorldApp@http://localhost:9001/remoteEntry.js'
+            }
+        })       
     ]
 };
