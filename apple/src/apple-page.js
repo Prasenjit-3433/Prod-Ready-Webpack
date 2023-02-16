@@ -6,3 +6,10 @@ heading.render('apple');
 
 const appleImage = new AppleImage();
 appleImage.render();
+
+// Dynamic Import
+import('HelloWorldApp/HelloWorldButton').then(HelloWorldButtonModule => {
+    const HelloWorldButton = HelloWorldButtonModule.default;
+    const helloWorldButton = new HelloWorldButton();
+    helloWorldButton.render();
+})
