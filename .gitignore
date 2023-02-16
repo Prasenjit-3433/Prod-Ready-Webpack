@@ -2,7 +2,9 @@
 
 # dependencies
 /hello-world/node_modules
+/hello-world/dist
 /apple/node_modules
+/apple/dist
 
 # testing
 /coverage
