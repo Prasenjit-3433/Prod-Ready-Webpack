@@ -4,10 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: {
-        'hello-world': './src/hellow-world-page.js',
-        'apple': './src/apple-page.js'
-    },
+    entry: './src/apple-page.js',
     output: {
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, './dist'),
@@ -17,7 +14,7 @@ module.exports = {
     optimization: {
         splitChunks: {
             chunks: 'all',
-            minSize: 3000
+            minSize: 10000
         }
     },
     module: {
@@ -25,16 +22,6 @@ module.exports = {
             {
                 test: /\.(png|jpg)$/,
                 type: 'asset',
-            },
-            {
-                test: /\.txt$/,
-                type: 'asset/source'
-            },
-            {
-                test: /\.css$/,
-                use: [
-                    MiniCssExtractPlugin.loader, 'css-loader'
-                ]
             },
             {
                 test: /\.scss$/,
@@ -49,14 +36,6 @@ module.exports = {
                     loader: 'babel-loader',
                     options: {
                         presets: ['@babel/env'],
-                        plugins: [
-                            [
-                                "@babel/plugin-proposal-pipeline-operator",
-                                {
-                                    "proposal" : "minimal"
-                                }    
-                            ]
-                        ]
                     }
                 }
             },
@@ -74,16 +53,7 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            filename: 'hello-world.html',
-            chunks: ['hello-world'],
-            title: "Hello World!",
-            template: 'src/page-template.hbs',
-            description: 'Hello World Page',
-            minify: false
-        }),
-        new HtmlWebpackPlugin({
             filename: 'apple.html',
-            chunks: ['apple'],
             title: "Apple!",
             template: 'src/page-template.hbs',
             description: 'Apple Page',
