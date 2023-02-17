@@ -8,7 +8,7 @@ module.exports = {
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, './dist'),
-        publicPath: ''
+        publicPath: 'http://localhost:9002/'
     },
     mode: 'development',
     devServer: {
@@ -66,8 +66,9 @@ module.exports = {
         }),
         new ModuleFederationPlugin({
             name: 'AppleApp',
-            remotes: {
-                HelloWorldApp: 'HelloWorldApp@http://localhost:9001/remoteEntry.js'
+            filename: 'remoteEntry.js',
+            exposes: {
+                './ApplePage': './src/components/apple-page/apple-page.component.js'
             }
         })
     ]
