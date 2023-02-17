@@ -5,6 +5,8 @@
 /hello-world/dist
 /apple/node_modules
 /apple/dist
+/dashboard/node_modules
+/dashboard/dist
 
 # testing
 /coverage
