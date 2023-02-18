@@ -7,6 +7,8 @@
 /apple/dist
 /dashboard/node_modules
 /dashboard/dist
+/image-caption/node_modules
+/image-caption/dist
 
 # testing
 /coverage
