@@ -3,12 +3,19 @@
 # dependencies
 /hello-world/node_modules
 /hello-world/dist
+/hello-world/LICENSE
+
 /apple/node_modules
 /apple/dist
+/apple/LICENSE
+
 /dashboard/node_modules
 /dashboard/dist
+/dashboard/LICENSE
+
 /image-caption/node_modules
 /image-caption/dist
+/image-caption/LICENSE
 
 # testing
 /coverage

@@ -8,6 +8,12 @@ class ApplePage {
 
         const appleImage = new AppleImage();
         appleImage.render();
+
+        import('ImageCaptionApp/ImageCaption').then(ImageCaptionModule => {
+            const ImageCaption = ImageCaptionModule.default;
+            const imageCaption = new ImageCaption();
+            imageCaption.render('Apple is oval, about the size of a large egg.')
+        })
     }
 }
 

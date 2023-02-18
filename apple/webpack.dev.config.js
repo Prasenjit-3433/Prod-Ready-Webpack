@@ -69,6 +69,9 @@ module.exports = {
             filename: 'remoteEntry.js',
             exposes: {
                 './ApplePage': './src/components/apple-page/apple-page.component.js'
+            },
+            remotes: {
+                ImageCaptionApp: 'ImageCaptionApp@http://localhost:9003/remoteEntry.js' 
             }
         })
     ]

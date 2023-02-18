@@ -1,8 +1,4 @@
-import Heading from './components/heading/heading';
-import AppleImage from './components/apple-image/apple-image';
+import ApplePage from './components/apple-page/apple-page.component.js';
 
-const heading = new Heading();
-heading.render('apple');
-
-const appleImage = new AppleImage();
-appleImage.render();
+const applePage = new ApplePage();
+applePage.render();
